@@ -8,9 +8,17 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 
 class NLPEngine:
-    def __init__(self, data_path="data/intents.json", model_path="data/model.pkl"):
-        self.data_path = data_path
-        self.model_path = model_path
+    def __init__(self, data_path=None, model_path=None):
+        # Resolve paths relative to the project root
+        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        
+        self.data_path = data_path or os.path.join(base_dir, "data", "intents_large.json")
+        self.model_path = model_path or os.path.join(base_dir, "data", "model.pkl")
+        
+        # Fallback to intents.json if intents_large.json doesn't exist
+        if not os.path.exists(self.data_path) and data_path is None:
+             self.data_path = os.path.join(base_dir, "data", "intents.json")
+
         self.pipeline = None
         self.intents = []
         
