@@ -1,0 +1,148 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": {
+        "en": ["Hi", "Hello", "Good morning", "Hey there", "Is anyone there?", "Hola", "Greetings"],
+        "id": ["Halo", "Hai", "Selamat pagi", "Selamat siang", "Ada orang?", "Permisi", "Woi"]
+      },
+      "responses": {
+        "en": ["Hello! Welcome to our Customer Service. How can I assist you today?", "Hi there! I'm your AI Assistant. What can I do for you?"],
+        "id": ["Halo! Selamat datang di Layanan Pelanggan kami. Ada yang bisa saya bantu?", "Hai! Saya Asisten AI Anda. Apa yang bisa saya lakukan untuk Anda?"]
+      },
+      "context_set": ""
+    },
+    {
+      "tag": "goodbye",
+      "patterns": {
+        "en": ["Bye", "See you later", "Goodbye", "I'm done", "End chat"],
+        "id": ["Dah", "Sampai jumpa", "Selamat tinggal", "Selesai", "Akhiri chat", "Makasih dah"]
+      },
+      "responses": {
+        "en": ["Goodbye! Have a great day.", "Thank you for contacting us. See you soon!"],
+        "id": ["Selamat tinggal! Semoga harimu menyenangkan.", "Terima kasih telah menghubungi kami. Sampai jumpa!"]
+      },
+      "context_set": ""
+    },
+    {
+      "tag": "faq_hours",
+      "patterns": {
+        "en": ["What are your operating hours?", "When are you open?", "Are you open on weekends?"],
+        "id": ["Jam berapa buka?", "Kapan buka?", "Buka hari minggu ga?", "Jam operasional"]
+      },
+      "responses": {
+        "en": ["Our customer support is available 24/7 via this chat. Our physical offices are open Mon-Fri, 9 AM - 5 PM."],
+        "id": ["Layanan pelanggan kami tersedia 24/7 via chat ini. Kantor fisik kami buka Senin-Jumat, 09.00 - 17.00."]
+      },
+      "context_set": ""
+    },
+    {
+      "tag": "faq_location",
+      "patterns": {
+        "en": ["Where is your office?", "Location?", "Address please"],
+        "id": ["Dimana kantornya?", "Lokasi kantor?", "Alamat lengkap", "Kantor dimana"]
+      },
+      "responses": {
+        "en": ["Our headquarters is located at 123 Tech Street, Silicon Valley, CA. You can find us on Google Maps."],
+        "id": ["Kantor pusat kami berlokasi di Jl. Teknologi No. 123, Jakarta Selatan. Anda bisa menemukannya di Google Maps."]
+      },
+      "context_set": ""
+    },
+    {
+      "tag": "check_order_status",
+      "patterns": {
+        "en": ["Where is my order?", "Check order status", "Track my package", "Status of order"],
+        "id": ["Dimana pesanan saya?", "Cek status pesanan", "Lacak paket", "Status order", "Paket saya sampai mana"]
+      },
+      "responses": {
+        "en": ["I can help with that. Please provide your Order ID (e.g., ORD-12345)."],
+        "id": ["Saya bisa bantu. Mohon berikan Order ID Anda (contoh: ORD-12345)."]
+      },
+      "context_set": "awaiting_order_id"
+    },
+    {
+      "tag": "provide_order_id",
+      "patterns": {
+        "en": ["ORD-", "My order is", "It is", "The number is"],
+        "id": ["ORD-", "Order saya", "Nomornya", "Ini nomornya"]
+      },
+      "responses": {
+        "en": ["Checking your order status..."],
+        "id": ["Sedang mengecek status pesanan Anda..."]
+      },
+      "context_set": ""
+    },
+    {
+      "tag": "complaint_product",
+      "patterns": {
+        "en": ["I received a damaged product", "Product is broken", "Wrong item received", "I want to complain", "Item not working"],
+        "id": ["Barang rusak", "Produk cacat", "Salah kirim barang", "Saya mau komplain", "Barang tidak berfungsi", "Kecewa"]
+      },
+      "responses": {
+        "en": ["I'm very sorry to hear that. Could you please describe the issue in more detail or provide the product name?"],
+        "id": ["Maaf sekali mendengarnya. Bisakah Anda jelaskan masalahnya lebih detail atau sebutkan nama produknya?"]
+      },
+      "context_set": "complaint_flow"
+    },
+    {
+      "tag": "payment_issue",
+      "patterns": {
+        "en": ["Payment failed", "I cannot pay", "Credit card rejected", "Payment error"],
+        "id": ["Pembayaran gagal", "Gak bisa bayar", "Kartu ditolak", "Error pas bayar", "Transfer gagal"]
+      },
+      "responses": {
+        "en": ["I understand you're facing payment issues. Are you trying to pay via Credit Card, PayPal, or Bank Transfer?"],
+        "id": ["Saya mengerti kendala Anda. Apakah Anda mencoba membayar via Kartu Kredit, E-Wallet, atau Transfer Bank?"]
+      },
+      "context_set": "payment_support"
+    },
+    {
+      "tag": "technical_support",
+      "patterns": {
+        "en": ["I can't login", "Forgot password", "Website is slow", "App crashing", "Error 404"],
+        "id": ["Gak bisa login", "Lupa password", "Web lemot", "Aplikasi crash", "Error", "Gak bisa masuk akun"]
+      },
+      "responses": {
+        "en": ["For technical issues, have you tried clearing your cache or resetting your password?"],
+        "id": ["Untuk masalah teknis, sudahkah Anda mencoba clear cache atau reset password Anda?"]
+      },
+      "context_set": "tech_support"
+    },
+    {
+      "tag": "human_agent",
+      "patterns": {
+        "en": ["I want to talk to a human", "Connect me to an agent", "This is too complicated", "Real person please", "Escalate"],
+        "id": ["Mau bicara sama manusia", "Sambungkan ke CS", "Ribet ngomong sama bot", "Orang asli dong", "Eskalasi"]
+      },
+      "responses": {
+        "en": ["I understand. I am connecting you to a human agent now. Please hold on a moment..."],
+        "id": ["Baik, saya sambungkan Anda dengan agen Customer Service kami. Mohon tunggu sebentar..."]
+      },
+      "context_set": "escalation"
+    },
+    {
+      "tag": "refund_request",
+      "patterns": {
+        "en": ["I want a refund", "Money back", "Return policy"],
+        "id": ["Minta refund", "Kembalikan uang saya", "Kebijakan pengembalian", "Balikin duit"]
+      },
+      "responses": {
+        "en": ["Refunds can be processed within 30 days of purchase. Would you like to proceed with a refund request?"],
+        "id": ["Refund bisa diproses dalam 30 hari pembelian. Apakah Anda ingin melanjutkan proses pengajuan refund?"]
+      },
+      "context_set": "refund_flow"
+    },
+    {
+      "tag": "thanks",
+      "patterns": {
+        "en": ["Thank you", "Thanks", "That helps", "Awesome"],
+        "id": ["Terima kasih", "Makasih", "Thanks", "Membantu banget", "Mantap"]
+      },
+      "responses": {
+        "en": ["You're welcome!", "Happy to help!", "Is there anything else?"],
+        "id": ["Sama-sama!", "Senang bisa membantu!", "Ada lagi yang bisa dibantu?"]
+      },
+      "context_set": ""
+    }
+  ]
+}

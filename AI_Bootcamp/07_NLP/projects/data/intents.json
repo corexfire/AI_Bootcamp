@@ -1,0 +1,29 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Good morning", "Hey there", "Hola"],
+      "responses": ["Hello!", "Hi there, how can I help?", "Good to see you!"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you", "Goodbye", "Have a nice day"],
+      "responses": ["Goodbye!", "See you later!", "Have a great day!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot"],
+      "responses": ["You're welcome!", "Happy to help!", "My pleasure."]
+    },
+    {
+      "tag": "product_info",
+      "patterns": ["What products do you have?", "Show me your catalog", "What do you sell?", "Product list"],
+      "responses": ["We sell AI Courses, Python Books, and Coding Merchandise.", "Check out our latest AI Bootcamp curriculum!"]
+    },
+    {
+      "tag": "price",
+      "patterns": ["How much is it?", "What is the price?", "Cost?", "Is it expensive?"],
+      "responses": ["Our courses start from $50.", "Please check the website for detailed pricing."]
+    }
+  ]
+}
